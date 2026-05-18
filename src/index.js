@@ -7,9 +7,9 @@ import connectDB from "./db/index.js"
 import {app} from "./app.js"
 
 
-connectDB()
-.then(()=>{
-    app.listen(process.env.PORT||8000,()=>{
+connectDB()                                            
+.then(()=>{                                                                //If DB connected → start Express server  
+    app.listen(process.env.PORT||8000,()=>{                                 //  If DB failed → handle error
     console.log(`Server is listening at port :${process.env.PORT}`)
     })
 })
